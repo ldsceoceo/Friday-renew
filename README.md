@@ -6,7 +6,7 @@
 
 | Secret 名称   | 是否必填 | 说明                                                        |
 |---------------|----------|-------------------------------------------------------------|
-| COOKIE        | ✅ 必填  | Friday(fridaydev.fr) 登录 Cookie，改版后填 `remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=xxx`（可再附 `; user_id=yyy`） |
+| COOKIE_VALUE  | ✅ 必填（旧 COOKIE 兼容） | Friday(fridaydev.fr) 登录 Cookie；首选填 `remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=xxx`，可再附 `; user_id=yyy`；也可只填值 |
 | EMAIL         | ❌ 可选  | 通知用备注名，可随意填写                                    |
 | GH_TOKEN      | ❌ 可选  | GitHub(classic) token，用于 Cookie 刷新后自动回写，以 `ghp_` 开头 |
 | NODE_LINK     | ❌ 可选  | 代理链接（vless/vmess/trojan/hysteria2/tuic/anytls/socks5 等） |
@@ -30,7 +30,7 @@
 1. 浏览器登录 https://fridaydev.fr/ （登录时勾上"记住我"之类的选项，否则只有两小时会话 Cookie）。
 2. 按 F12 ➡ 应用程序（Application）➡ 左侧 Cookie ➡ `https://fridaydev.fr`。
 3. 找到 `remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d` 那条（名称以 `remember_web_` 开头，过期时间在未来几个月的那条就是它），值原样复制、不要解码，拼成：
-   `remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=xxx`，填入 `COOKIE`；若还看得到 `user_id`，一并附上写成 `remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=xxx; user_id=yyy`。
+   `remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=xxx`，填入 `COOKIE_VALUE`；若还看得到 `user_id`，一并附上写成 `remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=xxx; user_id=yyy`。
 
 > * 别拷成 `control.fridaydev.fr`（Pterodactyl 面板）下的同名 Cookie 了，面板那条只在面板有效，脚本会在日志里提示"auth.php 返回未登录"。
 
