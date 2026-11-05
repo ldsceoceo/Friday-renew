@@ -2,7 +2,7 @@ name: Auto Renew Friday
 
 on:
   schedule:
-    - cron: '30 23 * * 1' # 根据到期时间的前一天推算星期几来续期，最后一个数字代表星期（RENOUVELLEMENT 13/10/2026，周二到期，周一跑，即北京时间周二早7:30）
+    - cron: '30 23 * * 5' # 根据到期时间的前一天推算星期几来续期，最后一个数字代表星期（RENOUVELLEMENT 13/10/2026，周二到期，周一跑，即北京时间周二早7:30）
   workflow_dispatch:
 
 jobs:
